@@ -1,79 +1,30 @@
-import { useParams } from "react-router";
-import "./task.css";
-import "../new-collection/new-collection";
+import React from "react";
+import { useParams } from "react-router-dom";
+import "./ProductDetails.css";
 
-import { useLocation } from "react-router-dom";
+const ProductDetails = ({ products }) => {
+  const { id } = useParams();
+  const product = products.find((product) => product.id === parseInt(id));
 
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
-const Men = () => {
-    let params1 = useParams();
-    return (
-        <div>
-            This is Men's Section{JSON.stringify(params1)}
-        </div>
-    )
-}
-
-const Women = () => {
-    let params2 = useParams();
-    return (
-        <div>
-            This is Women's Section{JSON.stringify(params2)}
-        </div>
-    )
-}
-
-const Kids = () => {
-    let params3 = useParams();
-    return (
-        <div>
-            This is Kids's Section{JSON.stringify(params3)}
-        </div>
-    )
-}
-
-const Newandfeatured = () => {
-    let params4 = useParams();
-    return (
-        <div>
-            This is New & Featured Section{JSON.stringify(params4)}
-        </div>
-    )
-}
-const Gifts = () => {
-    let params5 = useParams();
-    return (
-        <div>
-            This is Gifts' Section{JSON.stringify(params5)}
-        </div>
-    )
-}
-
-const Task = () => {
-    const location = useLocation(); 
-    const { image, title, sub_title, price, id } = location.state || {}; // Extract details
-  
-    if (!title) {
-      
-      return <div>No card data found. Navigate back and try again.</div>;
-    }
-  
-    return (
-      <div>
-        <h1>Card Details</h1>
-        <div>
-          <img
-            src={image}
-            alt={title}
-            style={{ width: "300px", height: "200px", objectFit: "cover" }}
-          />
-          <h2>Title: {title}</h2>
-          <h3>Sub-title: {sub_title}</h3>
-          <p>Price: ₹{price}</p>
-          <p>ID: {id}</p>
-        </div>
+  return (
+    <div className="product-details">
+      <div
+        className="product-image"
+        style={{
+          background: `url('${product.image}') center/cover no-repeat`,
+        }}
+      ></div>
+      <div className="product-info">
+        <h1>{product.title}</h1>
+        <p>{product.sub_title}</p>
+        <p>${product.price}</p>
       </div>
-    );
-  };
+    </div>
+  );
+};
 
-  export {Men, Women, Kids, Newandfeatured, Gifts, Task};
+export default ProductDetails;
