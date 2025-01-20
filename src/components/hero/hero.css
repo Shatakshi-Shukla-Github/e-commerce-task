@@ -11,7 +11,6 @@
   border-radius: 25px;
   position: relative;
   font-family: "Poppins", serif;
-  margin-top: -13px;
 }
 
 .hero-title {
@@ -27,4 +26,23 @@
   font-size: 30px;
   font-weight: 300;
   margin-top: -30px;
+}
+
+
+.buy-now-button {
+  position: absolute;
+  bottom: 50px;
+  right: 20px;
+  padding: 10px 20px;
+  font-size: 18px;
+  color: white;
+  background-color: #ff5733;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.buy-now-button:hover {
+  box-shadow: 0 0 20px rgba(255, 87, 51, 0.7);
 }
