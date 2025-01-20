@@ -1,5 +1,7 @@
+import React from "react";
 import "./navbar.css";
 import { NavLink } from "react-router";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const Navbar = () => {
   return (
@@ -32,7 +34,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className="navbar-logo">Logo</div>
-      <div className="navbar-user-info">user info</div>
+      <div className="navbar-user-info">
+        <i className="fas fa-search"></i>
+        <i className="fas fa-shopping-cart"></i>
+        <i className="fas fa-user"></i>
+      </div>
     </div>
   );
 };
