@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Sancreek&display=swap');
-
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,10 +18,20 @@
 
 .navbar-logo {
   font-size: 20px;
-  margin-left: -260px;
-  font-family: "Sancreek", serif;
-  font-weight: 450;
-  font-style: normal;
-  font-size: 35px;
-  margin-top: -15px;
+  margin-left: -161px;
+}
+
+.navbar-user-info {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar-user-info i {
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.navbar-user-info i:hover {
+  color: #ff5733;
 }
